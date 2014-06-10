@@ -1,5 +1,172 @@
-hahaha
-safasf askmakl;gmalkgm
-asl,al;s,gls;ag,asg
 
-aslgam,sl;gm,lag
+
+import javax.swing.JApplet;
+import javax.swing.JButton;
+
+import java.awt.Color;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+import javax.swing.JLabel;
+
+public class Clock extends JApplet {
+
+	/**
+	 * Create the applet.
+	 */
+	public Clock() {
+		getContentPane().setLayout(null);
+		
+		final JButton btnYellow = new JButton("Yellow");
+		btnYellow.setBounds(49, 33, 87, 23);
+		getContentPane().add(btnYellow);
+		btnYellow.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e){
+				getContentPane().setBackground(Color.yellow);
+				
+			}
+		});
+		JButton btnGray = new JButton("Gray");
+		btnGray.setBounds(169, 33, 87, 23);
+		btnGray.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				getContentPane().setBackground(Color.gray);
+			}
+		});
+		
+		getContentPane().add(btnGray);
+		
+		JButton btnGreen = new JButton("Green");
+		btnGreen.setBounds(307, 33, 87, 23);
+		getContentPane().add(btnGreen);
+	btnGreen.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				getContentPane().setBackground(Color.green);
+			}
+		});
+		
+		JButton btnSetting = new JButton("Setting 1");
+		btnSetting.setBounds(10, 219, 87, 23);
+		getContentPane().add(btnSetting);
+		
+		JButton btnSetting_1 = new JButton("Setting 2");
+		btnSetting_1.setBounds(126, 219, 87, 23);
+		getContentPane().add(btnSetting_1);
+		
+		JButton btnSetting_2 = new JButton("Setting 3");
+		btnSetting_2.setBounds(236, 219, 87, 23);
+		getContentPane().add(btnSetting_2);
+		
+		JButton btnSetting_3 = new JButton("Setting 4");
+		btnSetting_3.setBounds(339, 219, 87, 23);
+		getContentPane().add(btnSetting_3);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setBounds(23, 99, 383, 65);
+		getContentPane().add(lblNewLabel);
+
+	}
+}
+
+
+
+
+
+
+=-=============================================================================
+
+
+import java.applet.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.text.SimpleDateFormat;
+import java.util.*;
+
+import javax.swing.*;
+import java.applet.*;
+
+public class a123 extends Applet {
+	 private JPanel[] jp = new JPanel[3]; 
+	private JLabel  lb=new JLabel();
+	private JButton bt[] = new JButton[7];
+	public void init(){
+	
+
+		for(int i=0;i<3;i++){
+			jp[i]=new JPanel();
+			bt[i]=new JButton((i+1)+"號顏色");
+			jp[0].add(bt[i]);
+		}
+		for(int i=3;i<7;i++){
+			bt[i]=new JButton((i+1)+"號功能");
+			jp[2].add(bt[i]);
+		}
+
+		setLayout(new GridLayout(3,1));
+		jp[0].setLayout(new GridLayout(1,1));
+		jp[1].setLayout(new GridLayout(1,1));
+		jp[2].setLayout(new GridLayout(1,1));
+	
+		this.add(jp[1]=new panel1());
+		
+		
+		for(int i=0;i<3;i++){
+			add(jp[i]);
+		}
+		bt[0].addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e){
+				
+				setBackground(Color.gray);
+			
+			}
+		});
+		bt[1].addActionListener(new ActionListener(){
+				public void actionPerformed(ActionEvent e){
+					
+					setBackground(Color.green);
+					
+				}
+			
+		});
+		bt[2].addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e){
+	
+				setBackground(Color.yellow);
+			}
+		});
+		
+
+	}
+	
+}
+class panel1 extends JPanel {
+	
+	public void paint(Graphics g) {
+		
+		SimpleDateFormat sdFormat = 
+				new SimpleDateFormat("yyyy/MM/dd");
+		Date current = new Date();
+		g.drawString(sdFormat.format(current),100,140);
+		Calendar cal = new GregorianCalendar();
+		String hour = String.valueOf(cal.get(Calendar.HOUR));
+		String minute = String.valueOf(cal.get(Calendar.MINUTE));
+		String second = String.valueOf(cal.get(Calendar.SECOND));
+		g.drawString(hour + ":" + minute + ":" + second,100,150);
+		
+	}
+}
+==============================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
