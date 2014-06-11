@@ -1,0 +1,67 @@
+import java.text.SimpleDateFormat;
+import java.util.*;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+
+public class Text extends JApplet{
+	
+//	public static void main(String[] args){
+
+	/*Date today = new Date();
+	SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");  
+	String date = dateFormatter.format(today);
+        	System.out.println("Today in dd-MM-yyyy format : " + date);*/
+	private JButton bt = new JButton();
+	private JPanel jp[] = new JPanel[3];
+	public void init(){
+		setLayout(new GridLayout(3,1));
+	//	jp[0].setLayout(new GridLayout(1,1));
+	//	jp[1].setLayout(GridLayout(1,1));
+	//	jp[2].setLayout(GridLayout(1,1));
+	/*	T t=new T();
+		t.run();*/
+	}
+/*
+	while(true){
+	//String d10=dateFormatter.format(today.getTime()+1000);
+	System.out.println(date);
+}
+*/
+	//Date firstTime = dateFormatter.parse("2011/12/25 13:30:00");
+
+	//}
+
+static class T extends Thread{
+        private String name;
+
+        public void run(){
+	Date today = new Date();
+	
+while(true){
+	try{          
+		Date a= new Date();
+		SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");  
+		String date = dateFormatter.format(a.getTime()-today.getTime());
+		String as= dateFormatter.format(a);
+		String ts= dateFormatter.format(today);
+		System.out.println((a.getTime()-today.getTime())/1000);
+		System.out.println(date);
+	//	System.out.println(as);
+	//	System.out.println(ts);
+	                sleep(1000);
+	}
+	
+	catch(InterruptedException e){
+		System.out.println("over");
+	}
+	}
+
+       }
+}
+}
+
+
+
+	
